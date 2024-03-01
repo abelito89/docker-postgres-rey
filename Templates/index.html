@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de citas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2 id="Selecione_una_categoria_de_cita">Selecione una categoria de cita</h2><br>
+    <form action="/enviar_categoria" method="post">
+        
+            <select name="categoria_seleccionada">
+                <option value="-" {% if categoria_seleccionada == '-' %}selected{% endif %}>-</option>
+                {% for cat in lista_categorias %}
+                    
+                    <option value="{{cat}}" {% if categoria_seleccionada == cat %}selected{% endif %}>{{cat}}</option>
+                
+                {% endfor %}             
+                
+            </select>
+        
+        <input type="submit">
+    </form>
+    <p>{{cita_devuelta}}</p>
+    <h2>Introduzca más datos a la base de datos</h2>
+    
+    <form action="/nuevos_datos" method="post">
+        <label for="cita">Introduzca una nueva cita</label><br>
+        <input type="text" name="cita" required><br><br>
+        <label for="categoria">Introduzca la categoría a la que pertenece</label><br>
+        <input type="text" name="categoria" required><br><br>
+        <input type="submit" value="Agregar">
+    </form>
+    
+</body>
+</html>

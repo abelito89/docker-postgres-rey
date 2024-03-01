@@ -1,0 +1,16 @@
+h2 {
+    color: blue;
+}
+body {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+body > * {
+    padding: 10px 0; /* Ajusta estos valores según tus necesidades */
+}
+h2 {
+    margin-bottom: 10px; /* Ajusta este valor según tus necesidades */
+}
