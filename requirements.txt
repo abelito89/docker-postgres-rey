@@ -6,3 +6,4 @@ starlette
 itsdangerous
 jinja2
 psycopg2
+python-dotenv
